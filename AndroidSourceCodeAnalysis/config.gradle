@@ -1,0 +1,13 @@
+ext {
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.3",
+            minSdkVersion    : 22,
+            targetSdkVersion : 25,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+    dependencies = [
+            logger: 'com.orhanobut:logger:2.1.1'
+    ]
+}
