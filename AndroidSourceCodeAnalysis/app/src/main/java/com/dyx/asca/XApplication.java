@@ -20,15 +20,15 @@ public class XApplication extends Application {
     }
 
     private void supportTlsv12() {
-        try {
-            ProviderInstaller.installIfNeeded(getApplicationContext());
-            SSLContext sslContext;
-            sslContext = SSLContext.getInstance("TLSv1.2");
-            sslContext.init(null, null, null);
-            sslContext.createSSLEngine();
-        } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException
-                | NoSuchAlgorithmException | KeyManagementException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ProviderInstaller.installIfNeeded(getApplicationContext());
+//            SSLContext sslContext;
+//            sslContext = SSLContext.getInstance("TLSv1.2");
+//            sslContext.init(null, null, null);
+//            sslContext.createSSLEngine();
+//        } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException
+//                | NoSuchAlgorithmException | KeyManagementException e) {
+//            e.printStackTrace();
+//        }
     }
 }
