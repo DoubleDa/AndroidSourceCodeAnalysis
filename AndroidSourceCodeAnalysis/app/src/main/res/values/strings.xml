@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidSourceCodeAnalysis</string>
+    <string name="str_btn_okhttp">OkHttp介绍</string>
+    <string name="str_btn_retrofit">Retrofit介绍</string>
+    <string name="str_okhttp_send_network_requests">1、发送网络请求</string>
+    <string name="str_send">发送</string>
 </resources>
