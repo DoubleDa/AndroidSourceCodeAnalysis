@@ -1,0 +1,64 @@
+[
+  {
+    "packageName": "butterknife",
+    "superClass": null,
+    "className": "R",
+    "associations": [],
+    "usages": [],
+    "interfaces": [],
+    "type": "CLASS"
+  },
+  {
+    "packageName": "com.dyx.asca",
+    "superClass": null,
+    "className": "ExampleUnitTest",
+    "associations": [],
+    "usages": [],
+    "interfaces": [],
+    "type": "CLASS"
+  },
+  {
+    "packageName": "com.dyx.asca.model",
+    "superClass": null,
+    "className": "PersonBean",
+    "associations": [],
+    "usages": [
+      "com.dyx.asca.ui.OkHttpActivity"
+    ],
+    "interfaces": [],
+    "type": "CLASS"
+  },
+  {
+    "packageName": "com.dyx.asca.ui",
+    "superClass": null,
+    "className": "OkHttpActivity",
+    "associations": [
+      "com.dyx.asca.model.PersonBean"
+    ],
+    "usages": [
+      "com.dyx.asca.ui.OkHttpActivity_ViewBinding"
+    ],
+    "interfaces": [],
+    "type": "CLASS"
+  },
+  {
+    "packageName": "com.dyx.asca.ui",
+    "superClass": null,
+    "className": "OkHttpActivity_ViewBinding",
+    "associations": [
+      "com.dyx.asca.ui.OkHttpActivity"
+    ],
+    "usages": [],
+    "interfaces": [],
+    "type": "CLASS"
+  },
+  {
+    "packageName": "com.trello.rxlifecycle",
+    "superClass": null,
+    "className": "R",
+    "associations": [],
+    "usages": [],
+    "interfaces": [],
+    "type": "CLASS"
+  }
+]

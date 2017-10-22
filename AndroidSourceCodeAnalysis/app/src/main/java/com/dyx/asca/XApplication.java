@@ -6,6 +6,9 @@ import com.facebook.stetho.Stetho;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 /**
  * Author：dayongxin
  * Function：
@@ -17,6 +20,19 @@ public class XApplication extends Application {
         Logger.addLogAdapter(new AndroidLogAdapter());
         Stetho.initializeWithDefaults(this);
         supportTlsv12();
+        initRealm();
+    }
+
+    private void initRealm() {
+        //初始化Realm
+        Realm.init(this);
+        //配置Realm
+        RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .name("dyx.realm")
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        //应用配置
+        Realm.setDefaultConfiguration(configuration);
     }
 
     private void supportTlsv12() {
@@ -31,4 +47,6 @@ public class XApplication extends Application {
 //            e.printStackTrace();
 //        }
     }
+
+
 }

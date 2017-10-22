@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.dyx.asca.ui.GlideActivity;
 import com.dyx.asca.ui.OkHttpActivity;
 
 import butterknife.BindView;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnOkhttp;
     @BindView(R.id.btn_retrofit)
     Button btnRetrofit;
+    @BindView(R.id.btn_glide)
+    Button btnGlide;
     private Unbinder mUnbinder;
 
     @Override
@@ -27,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
         mUnbinder = ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_okhttp, R.id.btn_retrofit})
+    @OnClick({R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_glide})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_okhttp:
                 intentTo(OkHttpActivity.class);
+                break;
+            case R.id.btn_glide:
+                intentTo(GlideActivity.class);
                 break;
             case R.id.btn_retrofit:
                 break;
@@ -41,4 +47,5 @@ public class MainActivity extends AppCompatActivity {
     private void intentTo(Class<?> cla) {
         startActivity(new Intent(this, cla));
     }
+
 }

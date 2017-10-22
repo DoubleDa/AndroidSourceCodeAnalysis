@@ -293,17 +293,42 @@ public class OkHttpActivity extends AppCompatActivity {
             @javax.annotation.Nullable
             @Override
             public Request authenticate(Route route, Response response) throws IOException {
+                String credentials = Credentials.basic("dayongxin", "123456");
+                /**
+                 * 1
+                 */
                 if (response.request().header("Authorization") != null) {
                     return null;
                 }
+                /**
+                 * 2
+                 */
+                if (credentials.equals(response.request().header("Authorization"))) {
+                    return null;
+                }
+
+                /**
+                 * 3
+                 */
+                if (resCount(response) >= 3) {
+                    return null;
+                }
+
                 //Authorize response
                 Logger.d(response);
                 //challenges
                 Logger.d(response.challenges());
-                String credentials = Credentials.basic("dayongxin", "123456");
                 return response.request().newBuilder().header("Authorization", credentials).build();
             }
         }).build();
+    }
+
+    private int resCount(Response response) {
+        int result = 1;
+        while ((response = response.priorResponse()) != null) {
+            result++;
+        }
+        return result;
     }
 
     private void perCallByAsyn() {
